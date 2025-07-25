@@ -1,10 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Pages Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Pawelczyk</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+/* ----------  CMU brand variables  ---------- */
+:root{
+  --cmu-red:#1F4C4C;
+  --cmu-gold:#FDB515;
+  --cmu-green:#009647;        /* NEW  — CMU “Green Thread” */
+  --cmu-gray-dark:#393939;
+  --cmu-gray-light:#E0E0E0;
+}
+
+/* ----------  Minimal CMU header/footer  ---------- */
+.header-cmu{
+  background-color:var(--cmu-red);
+  color:#fff;
+  border-bottom:4px solid var(--cmu-red);
+
+  /* pin-stripes in CMU Green, 12 px repeat */
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0,99,65,.15) 0 3px,     /* green stripe, 25 % opacity */
+      transparent       3px 12px); /* clear run */
+  background-size:12px 12px;
+}
+
+
+/* name stands out in Gold Thread */
+#martin-pawelczyk{color:var(--cmu-gold);}
+
+/* optional global polish */
+body{color:var(--cmu-gray-dark);}
+
+
+.content-box{border:1px solid var(--cmu-gray-light);}  /* subtle framing */
+        body {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .custom-bg-color {
+            background-color: #1D3A8A;
+        }
+        .custom-text-color {
+            color: #1D3A8A;
+        }
+        .content-width {
+            width: 92%;
+            max-width: 1120px;
+        }
+        .nav-link {
+            padding-right: 0.18rem;
+            transition: opacity 0.3s ease;
+            font-size: 0.85rem;
+        }
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+        .nav-separator {
+            padding-right: 0.18rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 1.8rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.4rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.8rem;
+        }
+        .content-box h2 {
+            border-bottom: 2px solid #1D3A8A;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .link-hover:hover {
+            text-decoration: underline;
+        }
+    /* ----------  Global gold overrides  ---------- */
+/* ----------  Switch former gold accents to Green Thread  ---------- */
+
+/* coloured inline links + span elements */
+.custom-text-color{color:var(--cmu-green);}
+
+/* section titles underline */
+.content-box h2{
+  border-bottom:2px solid var(--cmu-green);
+}
+
+/* the gray call-out in “About me” */
+.border-custom-color{border-color:var(--cmu-green);}
+
+/* Tailwind arbitrary-value classes that baked in #1D3A8A  */
+[class*="text-[#1D3A8A]"]{
+  --tw-text-opacity:1;
+  color:var(--cmu-green) !important;
+}
+[class*="border-[#1D3A8A]"]{
+  --tw-border-opacity:1;
+  border-color:var(--cmu-green) !important;
+}
+
+/* optional: turn all left “pipes” on lists from blue → green */
+.border-l-4{border-color:var(--cmu-green);}
+
+/* --- overwrite header text colour to Gold Thread --- */
+.header-cmu{
+  color:var(--cmu-gold);              /* ◆ all text in header */
+}
+
+/* make the little “|” separators faint gold instead of white */
+.nav-separator{
+  color:rgba(253,181,21,.55);         /* 55 % opacity of #FDB515 */
+}
+    </style>
 </head>
-<body>
-    <h1>Hello, GitHub Pages!</h1>
-    <p>Welcome to my first website hosted on GitHub.</p>
-</body>
-</html>
+<body class="bg-gray-100">
+  <!-- dropped text-white so .header-cmu sets the colour -->
+  <header class="header-cmu py-4">
+    <div class="content-width mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-2" id="martin-pawelczyk">
+        Martin Pawelczyk
+      </h1>
+
+      <nav class="text-xl font-bold flex flex-wrap justify-end">
+        <a href="..." class="nav-link hover:underline">Google Scholar</a>
+        <span class="nav-separator">|</span>
+        <a href="..." class="nav-link hover:underline">CV</a>
+        <span class="nav-separator">|</span>
+        <a href="..." class="nav-link hover:underline">Bio</a>
+        <span class="nav-separator">|</span>
+        <a href="..." class="nav-link hover:underline">GitHub</a>
+        <span class="nav-separator">|</span>
+        <a href="..." class="nav-link hover:underline">Twitter</a>
+        <span class="nav-separator">|</span>
+        <a href="..." class="nav-link hover:underline">Email</a>
+        <span class="nav-separator">|</span>
+        <a href="#publications" class="nav-link hover:underline">Publications</a>
+        <span class="nav-separator">|</span>
+        <a href="#invited-talks" class="nav-link hover:underline">Invited Talks</a>
+        <span class="nav-separator">|</span>
+        <a href="#awards" class="nav-link hover:underline">Awards</a>
+      </nav>
+    </div>
+  </header>
+
+
+    <main class="content-width mx-auto px-4 py-10">
+        <div class="content-box">
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row mb-6">
+               <img src="..." alt="Martin Pawelczyk" class="w-64 h-auto object-cover rounded-lg mb-8 md:mb-0 md:mr-6">
+               <div class="about-me flex-grow">
+                <!-- current + future roles -->
+                <p class="mb-6 text-lg">
+                  I am a Research Scientist at
+                  <a href="https://ai.meta.com/research/" class="custom-text-color link-hover">Meta&nbsp;AI’s FAIR Alignment group</a>
+                  in&nbsp;San Francisco. Beginning <strong>Fall&nbsp;2026</strong>, I will join Carnegie Mellon University’s <a href="https://epp.engineering.cmu.edu/" class="custom-text-color link-hover">Engineering &amp; Public Policy (EPP)</a> Department and  
+                  <a href="https://lti.cs.cmu.edu/" class="custom-text-color link-hover">Language Technologies Institute (LTI)</a> 
+                  as an Assistant Professor.
+                </p>
+                <!-- research interests (unchanged) -->
+                <p class="mb-6 text-lg">
+                  My research interests are
+                  <strong>privacy</strong>,
+                  <strong>natural language processing</strong>, and the
+                  <strong>societal implications</strong> of ML. I explore the interplay between data,
+                  its influence on models, and the expectations of the people who regulate and use
+                  these models. My work has been recognized by the
+                  <a href="https://www.aspirations.org/news/2020-ncwit-collegiate-award-recipients-announced"
+                    class="custom-text-color link-hover">NCWIT Collegiate Award</a> and the
+                  <a href="https://sites.google.com/view/advml/advml-rising-star-award?authuser=0"
+                    class="custom-text-color link-hover">Rising Star in Adversarial ML Award</a>.
+                </p>
+
+                <p class="mb-6 text-lg">
+                  Previously, I was a postdoctoral scholar at University of Washington, advised by
+                  <a href="https://homes.cs.washington.edu/~yejin/" class="custom-text-color link-hover">Yejin Choi</a> and
+                  <a href="https://homes.cs.washington.edu/~yuliats/" class="custom-text-color link-hover">Yulia Tsvetkov</a>. I received my PhD from UC San Diego, advised by
+                  <a href="https://cseweb.ucsd.edu/~tberg/" class="custom-text-color link-hover">Taylor Berg-Kirkpatrick</a>, and during that time I was also a part-time researcher / intern at Microsoft Research—working with the
+                  <a href="https://www.microsoft.com/en-us/research/group/privacy-in-ai/" class="custom-text-color link-hover">Privacy in AI</a>,
+                  <a href="https://www.microsoft.com/en-us/research/group/algorithms-redmond/" class="custom-text-color link-hover">Algorithms</a>, and
+                  <a href="https://www.microsoft.com/en-us/research/group/semantic-machines/" class="custom-text-color link-hover">Semantic Machines</a> teams on differential privacy, model compression, and data synthesis.
+                </p>
+
+                <!-- new collaboration call-out -->
+                <div class="border-l-4 border-custom-color px-3 py-3 bg-gray-100">
+                  <p class="text-m mt-1">
+                    <b>Recruiting & collaborations:</b> If you are interested in working with me, please
+                    <a href="" class="custom-text-color link-hover">
+                      fill out this brief form
+                    </a>.
+                  </p>
+               </div>
+               
+
+    </body>
+    </html>
+    
