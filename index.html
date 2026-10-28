@@ -1,440 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Pawelczyk</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* ----------  CMU brand variables  ---------- */
-        :root {
-            --cmu-red:  #004F9F;       /* NEW  — CMU “Blue Green” (blue violet) #00778B */
-            --cmu-gold: #FDB515;
-            --cmu-green: #009647;     /* NEW  — CMU “Green Thread” */ 
-            --cmu-gray-dark: #393939;
-            --cmu-gray-light: #E0E0E0;
-        }
-
-        /* ----------  Minimal CMU header/footer  ---------- */
-        .header-cmu {
-            background-color: var(--cmu-red);
-            color: var(--cmu-gold); /* All text in header */
-            /* pin-stripes in CMU Green, 12 px repeat */
-            background-image: repeating-linear-gradient(
-                135deg,
-                rgba(0,99,65,.15) 0 3px,     /* green stripe, 25 % opacity */
-                transparent       3px 12px); /* clear run */
-            background-size: 12px 12px;
-        }
-
-        /* name stands out in Gold Thread */
-        #martin-pawelczyk { color: var(--cmu-gold); }
-
-        body {
-            color: var(--cmu-gray-dark);
-            font-size: 14px;
-            line-height: 1.6;
-            background-color: #ffffff; /* slight grey bg for body #f3f4f6 */
-        }
-
-        /* Standard Content Width */
-        .content-width {
-            width: 92%;
-            max-width: 1120px;
-        }
-
-        /* Navigation */
-        .nav-link {
-            padding-right: 0.18rem;
-            transition: opacity 0.3s ease;
-            font-size: 0.85rem;
-        }
-        .nav-link:hover { opacity: 0.8; }
-        .nav-separator {
-            padding-right: 0.18rem;
-            color: rgba(253,181,21,.55); /* 55 % opacity of #FDB515 */
-        }
-
-        /* Typography */
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; margin-top: 2rem; } /* Increased margin-top for clear separation */
-        h3 { font-size: 1.4rem; margin-top: 1.4rem; }
-        h4 { font-size: 1.2rem; margin-top: 1rem; }
-
-        /* Content Box Styling */
-           .content-box {
-            background-color: transparent; /* Changed from white to transparent */
-            padding: 2rem;
-            /* border-radius and box-shadow removed */
-        }
-
-        /* Section Styling */
-        .content-box h2 {
-            border-bottom: 2px solid var(--cmu-red);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Custom Colors & Overrides */
-        .custom-text-color { color: var(--cmu-red); }
-        .link-hover:hover { text-decoration: underline; }
-        .border-custom-color { border-color: var(--cmu-red); }
-
-        /* Highlight text within paragraphs */
-        .highlight-text {
-            font-weight: 600;
-            color: var(--cmu-gray-dark);
-        }
-
-        /* Overriding Tailwind arbitrary values for color consistency */
-        [class*="text-[#1D3A8A]"] {
-            --tw-text-opacity: 1;
-            color: var(--cmu-red) !important;
-        }
-        [class*="border-[#1D3A8A]"] {
-            --tw-border-opacity: 0;
-            border-color: var(--cmu-red) !important;
-        }
-        /* Turn list pipes red */
-        .border-l-4 { border-color: var(--cmu-red); }
-
-
-        /* Publication theme tags */
-        .pub-theme-tags {
-          margin-top: 0.35rem;
-        }
-        
-        .pub-theme-tag {
-          display: inline-block;
-          background: #f0f4f8;
-          color: var(--cmu-green);
-          padding: 0.2rem 0.5rem;
-          border-radius: 3px;
-          font-size: 0.7rem;
-          font-weight: 600;
-          letter-spacing: 0.3px;
-          margin-right: 0.4rem;
-        }
-        
-        .pub-theme-tag.xai { background: #e8f4f8; color: #1a5f7a; }
-        .pub-theme-tag.privacy { background: #f0e8f4; color: #5a1a7a; }
-        .pub-theme-tag.mem { background: #f4f0e8; color: #7a5a1a; }
-        .pub-theme-tag.data { background: #e8f4e8; color: #1a7a3a; }
-        .pub-theme-tag.datau { background: #f1f8f1; color: #1b4332; }
-        .pub-theme-tag.eval { background: #f4e8f0; color: #7a1a5a; }
-        .pub-theme-tag.agent { background: #e8eaf4; color: #1a2b7a; }      
-        .pub-theme-tag.safety { background: #f4e8e9; color: #7a1a22; }
-        .pub-theme-tag.reason { background: #f4ece8; color: #7a3a1a; }
-        
-    </style>
-</head>
-<body class="bg-white">
-
-    <header class="header-cmu py-4 shadow-md">
-        <div class="content-width mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-2" id="martin-pawelczyk">
-                Martin Pawelczyk
-            </h1>
-
-            <nav class="text-xl font-bold flex flex-wrap justify-end">
-                <a href="https://scholar.google.com/citations?user=oYAf_hgAAAAJ&hl=en" class="nav-link hover:underline">Google Scholar</a>
-                <span class="nav-separator">|</span>
-                <a href="https://github.com/MartinPawelczyk/MartinPawelczyk/blob/main/MartinPawelczykCV.pdf" class="nav-link hover:underline">CV</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link hover:underline">Bio</a>
-                <span class="nav-separator">|</span>
-                <a href="https://github.com/MartinPawelczyk" class="nav-link hover:underline">GitHub</a>
-                <span class="nav-separator">|</span>
-                <a href="https://x.com/MartinPawelczyk/status" class="nav-link hover:underline">Twitter</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link hover:underline">Email</a>
-                <span class="nav-separator">|</span>
-                <a href="#publications" class="nav-link hover:underline">Publications</a>
-                <span class="nav-separator">|</span>
-                <a href="#Openings" class="nav-link hover:underline">Recruiting</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="content-width mx-auto px-4 py-10">
-        <div class="content-box">
-
-            <div class="flex flex-col md:flex-row gap-8 mb-8">
-                
-                <div class="flex-shrink-0 mx-auto md:mx-0">
-                    <img src="pictures/mp_photo.jpg" alt="Martin Pawelczyk" 
-                         class="w-full md:w-48 h-auto object-cover rounded-lg shadow-sm" 
-                         style="max-height: 350px; object-fit: cover; object-position: center top;">
-                    
-                    <div class="mt-4 text-sm text-left md:text-left text-gray-700">
-                        <p>📩 <a href="mailto:martin.pawelczyk@univie.ac.at" class="custom-text-color hover:underline">martin.pawelczyk.at.univie.ac.at</a></p>
-                        <p class="mt-2">
-                        📍 Währinger Str. 29, Office 4.37 <br>
-                        Vienna, Austria</p>
-                    </div>
-                    
-                </div>
-
-                <div class="flex-grow">
-                    <p class="mb-4">
-                        👋 <b>Short bio:</b> I am an Assistant Professor for Responsible AI at the <a class="custom-text-color font-medium">University of Vienna</a>.
-                        Previously, I was a postdoctoral scholar at <a class="custom-text-color font-medium">Harvard University</a>. I received my PhD from the University of Tübingen. During that time, I was also a research associate at 
-                        <a href="https://himalakkaraju.github.io" class="custom-text-color link-hover font-medium">Harvard University</a>, the 
-                        <a href="https://asiabiega.github.io" class="custom-text-color link-hover font-medium">Max-Planck Institute for Security & Privacy</a> and an intern at 
-                        <a href="https://www.jpmorgan.com/technology/artificial-intelligence" class="custom-text-color link-hover font-medium">JP Morgan AI Research</a> where I worked with the
-                        <a href="https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/explainable-ai-center-of-excellence" class="custom-text-color link-hover font-medium">Explainable AI team</a> on explaining automated trading models.
-                    </p>
-
-                    <div class="research-interests-block">
-                        <p class="mb-4">
-                            🧭 <b>Research:</b> My research interests lie within the area of <span class="highlight-text">AI safety and Data-centric AI</span>. Specifically, I develop <span class="highlight-text">machine learning techniques</span> as well as <span class="highlight-text">evaluation frameworks</span> to improve the <span class="highlight-text">safety</span>, <span class="highlight-text">interpretability</span>, <span class="highlight-text">privacy</span>, and <span class="highlight-text">reasoning</span> capabilities of predictive and generative models.
-                        </p>
-                        <p class="mb-2">My work addresses fundamental questions such as:</p>
-                        <ol class="list-decimal pl-5 space-y-1">
-                            <li><b>Privacy and Unlearning:</b> How do we build privacy and unlearning frameworks that better balance privacy and utility in foundation models?</li>
-                            <li><b>Data Curation:</b> What influence does data have on the safety of foundation models?</li>
-                            <li><b>Interpretability:</b> How can we build interpretable and accurate foundation mdoels to assist in human decision-making?</li>
-                            <li><b>Evaluation:</b> How can we devise large scale evaluations that test foundation models effectively?</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-8">
-                <p class="leading-relaxed">
-                💡 <b>Motivation:</b> Richard Sutton’s <i>Bitter Lesson</i> posits that scaling data and compute is the most reliable path to advanced artificial intelligence. While this accurately describes the current trajectory of foundation models, it obscures critical challenges in how we curate and utilize data. First, many real-world applications - such as edge computing - require smaller, highly efficient models. Here, the challenge is not scaling, but selecting the right data. Second, even when model size is unconstrained, scaling hits a roadblock due to the limited amount of semantically diverse, high-quality data in web-scale corpora. Finally, training indiscriminately on the entire web introduces severe risks, such as the regurgitation of private information and the reproduction of harmful content. <i>Our overarching goal is to fundamentally understand how data drives model behavior at scale, and to develop novel methodologies to safely and effectively steer AI systems through principled data curation.</i>
-                </p>
-            </div>
-        
-            <hr class="border-gray-200 my-8">
-
-            <section id="Openings" class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 custom-text-color">Recruiting & Collaborations</h2>
+<section id="advising" class="mb-10 mt-10">
+                <h2 class="text-2xl font-bold mb-4 custom-text-color">Advising & Mentoring</h2>
                 <p class="mb-6">
-                    I am constantly seeking highly motivated and curious students from diverse backgrounds who are passionate about building, breaking, and understanding machine learning systems. 
-                    My group fosters a collaborative and supportive environment where you can develop cutting-edge research and make a significant impact.
+                    I am privileged to work with and mentor talented students and researchers. Below is a list of current and past mentees.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h4 class="text-lg font-bold mb-3 custom-text-color">PhD Positions</h4>
-                        <p class="mb-2">We welcome applications from prospective PhD students who possess:</p>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li>A Master's degree (or equivalent) or close to graduating, ideally in CS, Math, Statistics, or ML.</li>
-                            <li>A strong foundational understanding of mathematics.</li>
-                            <li>Proficient coding skills or a keen ambition to cultivate them.</li>
-                            <li>Fluency in English (written and spoken).</li>
+                        <h4 class="text-lg font-bold mb-3 custom-text-color">Current Group & Mentees</h4>
+                        <ul class="space-y-3">
+                            <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
+                                <p class="text-base font-bold text-[#1D3A8A]">
+                                    <a href="#" class="custom-text-color hover:underline">Student Name</a>
+                                </p>
+                                <p class="text-xs text-gray-600">PhD Student, University of Vienna (2026–Present)</p>
+                                <p class="text-sm italic">Research topic: Data-centric AI & Safety</p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
+                                <p class="text-base font-bold text-[#1D3A8A]">
+                                    <a href="#" class="custom-text-color hover:underline">Student Name</a>
+                                </p>
+                                <p class="text-xs text-gray-600">Master's Student, University of Vienna (2026–Present)</p>
+                                <p class="text-sm italic">Research topic: Machine Unlearning</p>
+                            </li>
                         </ul>
                     </div>
-                    
+
                     <div>
-                        <h4 class="text-lg font-bold mb-3 custom-text-color">Internships & Collaborations</h4>
-                        <p class="mb-2 text-sm">
-                            <b>Grad Students:</b> Year-round internship positions available. Email with CV and subject "Internship Position (Graduate Student)".
-                        </p>
-                        <p class="mb-2 text-sm">
-                            <b>Undergrad/Masters:</b> Email with CV, transcripts, and subject "Interested in Collaboration (Student)".
-                        </p>
-                        <p class="text-sm">
-                            <b>Researchers:</b> Open to collaboration on Data-centric AI and AI safety. Subject "Interested in Collaboration".
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="mt-6 p-4 bg-blue-50 border-l-4 border-[#1D3A8A] rounded-r">
-                    <p>
-                        <b>Interested in working with me?</b> Please <a href="https://forms.gle/LFhq69JCBm6mMoV27" class="custom-text-color link-hover font-bold">fill out this brief form</a>.
-                    </p>
-                </div>
-            </section>
-
-            <section id="news" class="mb-10">
-                <h2 class="text-2xl font-bold mb-6 custom-text-color">Recent News</h2>
-                <div class="space-y-3">
-
-                <div class="flex items-baseline">
-                    <span class="text-base mr-3 w-5 text-center">🧱</span>
-                    <p class="text-base m-0 leading-snug"><b>Oct'26</b>: Excited to teach "Building Foundation Models from Scratch" to MSc students this winter term</a>.</p>
-                </div>  
-
-                <div class="flex items-baseline">
-                    <span class="text-base mr-3 w-5 text-center">📖</span>
-                    <p class="text-base m-0 leading-snug"><b>June'26</b>: New preprint: <a href="https://arxiv.org/abs/2606.05029" class="custom-text-color hover:underline">Validity Threats for Foundation Model Research</a>.</p>
-                </div>    
-                    
-                <div class="flex items-baseline">
-                    <span class="text-base mr-3 w-5 text-center">📖</span>
-                    <p class="text-base m-0 leading-snug"><b>May'26</b>: New preprint: <a href="https://arxiv.org/abs/2605.25929" class="custom-text-color hover:underline">Multi-Agent Systems are Mixtures of Experts: Who Becomes an Influencer?</a>.</p>
-                </div>
-
-                <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">📖</span>
-                        <p class="text-base m-0 leading-snug"><b>Apr'26</b>: Paper accepted at ACL'26: <a href="https://arxiv.org/abs/2501.00418" class="custom-text-color hover:underline">Generalizing Trust: Weak-to-Strong Trustworthiness in Language Models</a>.</p>
-                 </div>
-                    
-                <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">🤝</span>
-                        <p class="text-base m-0 leading-snug"><b>Mar'26</b>: Happy to serve as an Area Chair for NeurIPS'26. </p>
-                 </div>
-                    
-                <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">📖</span>
-                        <p class="text-base m-0 leading-snug"><b>Mar'26</b>: New preprint: <a href="https://arxiv.org/abs/2603.15809" class="custom-text-color hover:underline">Don’t Trust Stubborn Neighbors: A Security Framework for Agentic Networks</a>.</p>
-                </div>
-                    
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">🚀</span>
-                        <p class="text-base m-0 leading-snug"><b>Feb'26</b>: Started as an Assistant Professor in Responsible AI at the University of Vienna.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">🤝</span>
-                        <p class="text-base m-0 leading-snug"><b>Jan'26</b>: Happy to serve as an Area Chair for KDD'26.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">🎤</span>
-                        <p class="text-base m-0 leading-snug"><b>Jan'26</b>: Keynote on Machine Unlearning at the Huawei Tech Summit in Helsinki.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">📖</span>
-                        <p class="text-base m-0 leading-snug"><b>Jan'26</b>: Paper accepted at ICLR'26: <a href="https://arxiv.org/abs/2509.23383" class="custom-text-color hover:underline">Train Once, Answer All: Many Pretraining Experiments for the Cost of One</a>.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">🎤</span>
-                        <p class="text-base m-0 leading-snug"><b>Sep'25</b>: Talk on 'Verifiable Data Attributions without Breaking the Bank' at the Sorbonne Winter School on Causal AI and XAI in Paris.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">📖</span>
-                        <p class="text-base m-0 leading-snug"><b>Sep'25</b>: Paper accepted at NeurIPS'25: <a href="https://arxiv.org/abs/2508.10866v1." class="custom-text-color hover:underline">Efficiently Verifiable Proofs of Data Attribution</a>.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">🏆</span>
-                        <p class="text-base m-0 leading-snug"><b>June'25</b>: Spotlight Talks at ICML'25 CFAgentic & MOSS workshops: <a href="https://arxiv.org/abs/2501.00418" class="custom-text-color hover:underline">Weak-to-Strong Trustworthiness in LLMs</a>.</p>
-                    </div>
-                    <div class="flex items-baseline">
-                        <span class="text-base mr-3 w-5 text-center">📖</span>
-                        <p class="text-base m-0 leading-snug"><b>Jan'25</b>: Paper accepted at ICLR'25: <a href="https://arxiv.org/abs/2406.17216" class="custom-text-color hover:underline">Machine Unlearning Fails to Remove Data Poisoning Attacks</a>.</p>
-                    </div>
-                     <div class="flex items-baseline">
-                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🛠️</span>
-                    <p class="text-base m-0 leading-snug"><b>Dec'24</b>: Workshop accepted at ICLR'25: Trust in LLMs & LLM Applications. </p>
-                    </div>
-                    <div class="flex items-baseline">
-                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎤</span>
-                    <p class="text-base m-0 leading-snug"><b>July'24</b>: Presenting In-Context Unlearning at ICML'24 in Vienna. </p>
-                    </div>
-                    <div class="flex items-baseline">
-                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🏆</span>
-                    <p class="text-base m-0 leading-snug"><b>June'24</b>: Spotlight Talk at ICML'24 GenLaw workshop: <a href="https://arxiv.org/abs/2406.17216" class="custom-text-color hover:underline">Machine Unlearning Fails to Remove Data Poisoning Attacks</a>. </p>
-                    </div>
-                    <div class="flex items-baseline">
-                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📖</span>
-                    <p class="text-base m-0 leading-snug"><b>May'24</b>: Paper accepted at ICML'24: <a href="https://arxiv.org/abs/2310.07579" class="custom-text-color hover:underline">In-Context Unlearning: Language Models as Few Shot Unlearners</a>. </p>
+                        <h4 class="text-lg font-bold mb-3 custom-text-color">Alumni & Past Mentees</h4>
+                        <ul class="space-y-3">
+                            <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
+                                <p class="text-base font-bold text-[#1D3A8A]">
+                                    <a href="#" class="custom-text-color hover:underline">Former Student Name</a>
+                                </p>
+                                <p class="text-xs text-gray-600">Research Intern / MSc Student (2024–2025)</p>
+                                <p class="text-sm italic">Next: PhD Student at University Name</p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
+                                <p class="text-base font-bold text-[#1D3A8A]">
+                                    <a href="#" class="custom-text-color hover:underline">Former Student Name</a>
+                                </p>
+                                <p class="text-xs text-gray-600">Master's Thesis (2022–2023)</p>
+                                <p class="text-sm italic">Next: Research Scientist at Company</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
-            <section id="publications" class="mb-4">
-                <h2 class="font-bold mb-4 custom-text-color">Selected Publications</h2>
-                <p class="mb-4">For the full list of publications, please refer to my <a href="https://scholar.google.com/citations?user=oYAf_hgAAAAJ&hl=en" class="custom-text-color hover:underline font-bold">Google Scholar</a> page. (*) denotes equal contribution with alphabetical order.</p>
-
-
-                    <ul class="space-y-4">
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2606.05029" class="custom-text-color hover:underline">Validity Threats for Foundation Model Research</a></p>
-                        <p class="text-sm italic">G. König, <strong>M. Pawelczyk </strong>, U. Luxburg, S. Bordt </p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag eval">Evaluation</span>  </p>
-                    </li>
-
-                
-                    <ul class="space-y-4">
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2603.15809" class="custom-text-color hover:underline">Don’t Trust Stubborn Neighbors: A Security Framework for Agentic Networks</a></p>
-                        <p class="text-xs text-gray-600 tracking-wide mt-1">Preprint, *equal student contribution, <sup>&dagger;</sup>equal contribution among senior authors</p>
-                        <p class="text-sm italic">S. Abedini*, S. Mavali*, L. Schönherr, <strong>M. Pawelczyk<sup>&dagger;</sup> </strong>, R. Burkholz<sup>&dagger;</sup> </p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag agent">Agents</span> <span class="pub-theme-tag reason">Reasoning</span> <span class="pub-theme-tag robustness">Safety</span> </p>
-                    </li>
-
-                <ul class="space-y-4">
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2509.23383" class="custom-text-color hover:underline">Train Once, Answer All: Many Pretraining Experiments for the Cost of One</a></p>
-                        <p class="text-xs text-gray-600 tracking-wide mt-1">ICLR 2026</p>
-                        <p class="text-sm italic">S. Bordt, <strong>M. Pawelczyk</strong></p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag data">Data Influence</span> <span class="pub-theme-tag mem">Memorization</span> <span class="pub-theme-tag privacy">Privacy</span> <span class="pub-theme-tag eval">Evaluation</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2508.10866v1" class="custom-text-color hover:underline">Efficiently Verifiable Proofs of Data Attribution</a></p>
-                        <p class="text-xs text-gray-600">NeurIPS 2025</p>
-                        <p class="text-sm italic">A. Karchmer, S. Neel, <strong>M. Pawelczyk</strong></p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag data">Data Influence</span> <span class="pub-theme-tag xai">XAI</span>  <span class="pub-theme-tag eval">Evaluation</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2406.17216" class="custom-text-color hover:underline">Machine Unlearning Fails to Remove Data Poisoning Attacks</a></p>
-                        <p class="text-xs text-gray-600 tracking-wide mt-1">ICLR 2025, 🏆 Spotlight @ ICML'24 GenLaw Workshop</p>
-                        <p class="text-sm italic"><strong>M. Pawelczyk</strong>, J. Z. Di, A. Sekhari, G. Kautam, S. Neel</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag datau">Data Unlearning</span> <span class="pub-theme-tag privacy">Privacy</span> <span class="pub-theme-tag eval">Evaluation</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2310.07579" class="custom-text-color hover:underline">In-Context Unlearning: Language Models as Few Shot Unlearners</a></p>
-                        <p class="text-xs text-gray-600 tracking-wide mt-1">ICML 2024, <sup>&dagger;</sup>equal contribution among senior authors </p>
-                        <p class="text-sm italic"><strong>M. Pawelczyk</strong>, S. Neel<sup>&dagger;</sup>, H. Lakkaraju<sup>&dagger;</sup></p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag datau">Data Unlearning</span> <span class="pub-theme-tag privacy">Privacy</span> <span class="pub-theme-tag eval">Evaluation</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9998482" class="custom-text-color hover:underline">Deep Neural Networks and Tabular Data</a></p>
-                        <p class="text-xs text-gray-600">IEEE Transactions on Neural Networks and Learning Systems 2023</p>
-                        <p class="text-sm italic">V Borisov, T Leemann, K Sessler, J Haug, <strong>M. Pawelczyk</strong>, G. Kasneci</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag eval">Evaluation</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2210.06280" class="custom-text-color hover:underline">Language Models are Realistic Tabular Data Generators</a></p>
-                        <p class="text-xs text-gray-600 tracking-wide mt-1">ICLR 2023, *equal contribution</p>
-                        <p class="text-sm italic">V. Borisov*, K. Sessler*, T. Leemann, <strong>M. Pawelczyk</strong>, G. Kasneci</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag privacy">Privacy</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-4 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2306.07273" class="custom-text-color hover:underline">Gaussian Membership Inference Privacy</a></p>
-                        <p class="text-xs text-gray-600">NeurIPS 2023, *equal contribution</p>
-                        <p class="text-sm italic">T. Leemann*, <strong>M. Pawelczyk*</strong>, G. Kasneci</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag privacy">Privacy</span> <span class="pub-theme-tag mem">Memorization</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2203.06768" class="custom-text-color hover:underline">Probabilistically Robust Recourse: Navigating the Trade-offs between Costs and Robustness in Algorithmic Recourse</a></p>
-                        <p class="text-xs text-gray-600">ICLR 2023</p>
-                        <p class="text-sm italic"><strong>M. Pawelczyk</strong>, T. Datta, J. v. d. Heuvel, G. Kasneci, H. Lakkaraju</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag xai">XAI</span> </p>
-                    </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2206.11104" class="custom-text-color hover:underline">OpenXAI: Towards a Transparent Evaluation of Model Explanations</a></p>
-                        <p class="text-xs text-gray-600">NeurIPS 2022</p>
-                        <p class="text-sm italic"> C. Agarwal, S. Krishna, E.Saxena, <strong>M. Pawelczyk</strong>, N. Johnson, I. Puri, M. Zitnik, H.Lakkaraju </p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag xai">XAI</span> <span class="pub-theme-tag eval">Evaluation</span> </p>
-                   </li>
-
-                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2108.00783" class="custom-text-color hover:underline">A Benchmark for Algorithmic Recourse and Counterfactual Explanation Algorithms</a></p>
-                        <p class="text-xs text-gray-600">NeurIPS 2021, 🏆 Spotlight @ ICML'22 Algorithmic Recourse Workshop</p>
-                        <p class="text-sm italic"><strong>M. Pawelczyk</strong>, S. Bielawski, J. v. d. Heuvel, T. Richter, G. Kasneci</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag xai">XAI</span> <span class="pub-theme-tag eval">Evaluation</span> </p>
-                   </li>
-        
-                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1 hover:bg-gray-50 transition-colors">
-                        <p class="text-base font-bold text-[#1D3A8A]"><a href="https://arxiv.org/abs/1910.09398" class="custom-text-color hover:underline">Learning Model-agnostic Counterfactual Explanations for Tabular Data</a></p>
-                        <p class="text-xs text-gray-600">WWWW 2020</p>
-                        <p class="text-sm italic"><strong>M. Pawelczyk</strong>, K. Broelemann, G. Kasneci</p>
-                        <p class="pub-theme-tags"> <span class="pub-theme-tag xai">XAI</span> </p>
-                    </li>
-                    
-                </ul>
-            </section>
-
-        </div>
-    </main>
-</body>
-</html>
-
